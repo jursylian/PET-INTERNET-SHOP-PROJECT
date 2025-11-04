@@ -1,0 +1,152 @@
+.categories {
+  height: auto;
+  min-height: 560px;
+  border-radius: 10px;
+
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-top: 106px;
+}
+.titleCategories {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.line {
+  width: 850px;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+.sectionTitle {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  margin-right: 32px;
+}
+.categoriBottom {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: white;
+  padding: 8px 16px;
+  color: #8b8b8b;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.categoriBottom:hover {
+  background-color: #7e7b7b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.categoriBottom:active {
+  background-color: #0d50ff;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.categoriesImage {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+.cardImage {
+  width: 316px;
+  height: 350px;
+
+  opacity: 1;
+  border-radius: radius big;
+}
+.cardLabel {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  color: #282828;
+  margin-top: 16px;
+  line-height: 130%;
+
+  text-align: center;
+}
+
+@media (max-width: 1370px) {
+  .sectionTitle {
+    font-size: 48px;
+    margin-left: 24px;
+  }
+
+  .line {
+    width: 100%;
+  }
+
+  .categoriBottom {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .categoriesImage {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleCategories {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+    margin-right: 0;
+  }
+
+  .line {
+    width: 100%;
+  }
+
+  .categoriBottom {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .categoriesImage {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cardImage {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .cardLabel {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .categoriBottom {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .cardImage {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .cardLabel {
+    font-size: 14px;
+  }
+}

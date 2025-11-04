@@ -1,0 +1,150 @@
+.discountSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: auto;
+  min-height: 560px;
+  border-radius: 10px;
+  background: linear-gradient(261.47deg, #2451c6 32.63%, #0d50ff 98.96%);
+  width: 100%;
+
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  color: #ffffff;
+  margin-top: 32px;
+  letter-spacing: 0%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap: 16px;
+  margin-right: 32px;
+  margin-top: 120px;
+}
+.input {
+  padding: 16px 32px;
+  width: 516px;
+  height: 58px;
+
+  opacity: 1;
+  gap: 10px;
+  background-color: #2451c6;
+  border-radius: 5px;
+
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: Montserrat;
+}
+.input::placeholder {
+  color: white;
+  font-size: 16px;
+}
+.button {
+  padding: 16px 32px;
+  width: 516px;
+  height: 58px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: #385399;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.button:active {
+  background-color: rgb(35, 54, 197);
+  color: white;
+  transform: scale(0.98);
+}
+
+.animals {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 783px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .discountSection {
+    margin-right: 50px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+  .input,
+  .button {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .form {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animals {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+  .input,
+  .button {
+    max-width: 420px;
+
+    .form {
+      padding: 0 20px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .animals {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+  .form {
+    align-items: center;
+    justify-content: center;
+  }
+  .input,
+  .button {
+    font-size: 14px;
+    padding: 12px 20px;
+    max-width: 200px;
+  }
+
+  .animals {
+    display: none;
+  }
+}
