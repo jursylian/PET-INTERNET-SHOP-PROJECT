@@ -1,0 +1,81 @@
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  background: #fff;
+  min-height: 70vh;
+  box-sizing: border-box;
+}
+
+/* Верхняя строка с заголовком и кнопкой */
+.headerRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #282828;
+  white-space: nowrap;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #dddddd;
+  margin: 0 20px;
+  transform: translateY(2px);
+}
+
+.backButton {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #8b8b8b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backButton:hover {
+  background: #f3f4f6;
+  border-color: #d1d1d1;
+}
+
+/* Основной контент */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin-top: 40px;
+}
+
+.text {
+  font-size: 20px;
+  color: #282828;
+  margin-bottom: 32px;
+  text-align: start;
+}
+
+.continueButton {
+  background: #0d50ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 56px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.continueButton:hover {
+  background: #0054cc;
+}

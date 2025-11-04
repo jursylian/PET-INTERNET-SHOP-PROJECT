@@ -10,6 +10,7 @@ import {
 } from "../../redux/cartSlice";
 import OrderSuccessModal from "../../components/OrderSuccessModal/OrderSuccessModal";
 import styles from "./Cart.module.css";
+import EmptyCart from "../../components/EmptyCart/EmptyCart";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -36,16 +37,18 @@ const Cart = () => {
         items,
         total: totalPrice,
       });
+
       setIsModalOpen(true);
-      dispatch(clearCart());
       reset();
     } catch (err) {
       console.error("Order error:", err);
     }
   };
 
-  if (items.length === 0)
-    return <p className={styles.empty}>Your cart is empty.</p>;
+  // Если корзина пуста — показываем компонент EmptyCart
+  if (items.length === 0 && !isModalOpen) {
+    return <EmptyCart />;
+  }
 
   return (
     <div className={styles.cartPage}>
@@ -128,42 +131,65 @@ const Cart = () => {
           ))}
         </div>
 
-        {/* Правая часть — детали заказа */}
+        {/* Правая часть — заказ */}
         <div className={styles.orderDetails}>
           <h2>Order details</h2>
 
-          <p className={styles.itemsCount}>{items.length} items</p>
-
-          <div className={styles.totalRow}>
-            <span className={styles.totalLabel}>Total</span>
-            <span className={styles.totalPrice}>${totalPrice.toFixed(2)}</span>
+          <div className={styles.summary}>
+            <p className={styles.itemsCount}>
+              {items.length} {items.length === 1 ? "item" : "items"}
+            </p>
+            <div className={styles.totalRow}>
+              <span className={styles.totalLabel}>Total</span>
+              <span className={styles.totalPrice}>
+                ${totalPrice.toFixed(2)}
+              </span>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <input
-              placeholder="Name"
-              {...register("name", { required: true })}
-            />
-            {errors.name && (
-              <span className={styles.error}>Name is required</span>
-            )}
+            <div className={styles.inputGroup}>
+              <input
+                placeholder="Name"
+                {...register("name", { required: "Name is required" })}
+              />
+              {errors.name && (
+                <p className={styles.errorText}>{errors.name.message}</p>
+              )}
+            </div>
 
-            <input
-              placeholder="Phone number"
-              {...register("phone", { required: true })}
-            />
-            {errors.phone && (
-              <span className={styles.error}>Phone is required</span>
-            )}
+            <div className={styles.inputGroup}>
+              <input
+                placeholder="Phone number"
+                {...register("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^[0-9+\-\s()]+$/,
+                    message: "Please enter a valid phone number",
+                  },
+                })}
+              />
+              {errors.phone && (
+                <p className={styles.errorText}>{errors.phone.message}</p>
+              )}
+            </div>
 
-            <input
-              placeholder="Email"
-              type="email"
-              {...register("email", { required: true })}
-            />
-            {errors.email && (
-              <span className={styles.error}>Email is required</span>
-            )}
+            <div className={styles.inputGroup}>
+              <input
+                placeholder="Email"
+                type="email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Please enter a valid email",
+                  },
+                })}
+              />
+              {errors.email && (
+                <p className={styles.errorText}>{errors.email.message}</p>
+              )}
+            </div>
 
             <button type="submit" className={styles.orderButton}>
               Order
@@ -174,7 +200,10 @@ const Cart = () => {
 
       <OrderSuccessModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={() => {
+          setIsModalOpen(false);
+          dispatch(clearCart());
+        }}
       />
     </div>
   );
