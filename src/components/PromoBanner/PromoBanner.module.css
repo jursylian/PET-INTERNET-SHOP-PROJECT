@@ -3,10 +3,6 @@
   width: 100%;
   height: 600px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 80px;
 }
 
 .image {
@@ -22,27 +18,26 @@
 .content {
   position: relative;
   z-index: 2;
-  text-align: start;
   color: #fff;
+  text-align: left;
+  padding-left: 80px;
+  transform: translateY(70px);
 }
 
 .content h1 {
   font-size: 96px;
   font-weight: 700;
   margin-bottom: 40px;
+  line-height: 1.1;
 }
 
 .button {
-  position: relative;
-  z-index: 2;
   background: #0d50ff;
   width: 218px;
   height: 58px;
-
   color: #fff;
   font-weight: 600;
   font-size: 20px;
-  padding: 14px 32px;
   border: none;
   border-radius: 8px;
   cursor: pointer;

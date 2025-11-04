@@ -1,0 +1,53 @@
+.notFound {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.errorBlock {
+  margin-bottom: 80px;
+}
+
+.errorCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 220px;
+  font-weight: 800;
+  color: #0d50ff;
+  line-height: 1;
+}
+
+.dog {
+  width: 690px;
+  height: 280px;
+  margin: 0 10px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #282828;
+}
+
+.text {
+  color: #8b8b8b;
+  font-size: 20px;
+  margin: 16px 0 32px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0d50ff;
+  color: white;
+  padding: 16px 56px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #003fcc;
+  transform: translateY(-2px);
+}
