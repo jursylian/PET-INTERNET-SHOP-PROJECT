@@ -1,0 +1,10 @@
+.section {
+  height: auto;
+  min-height: 800px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
