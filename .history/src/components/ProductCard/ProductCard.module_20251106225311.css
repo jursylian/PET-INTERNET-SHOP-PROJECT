@@ -1,0 +1,125 @@
+.card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 316px;
+  min-height: 480px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #0d50ff;
+  color: #fff;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 34px;
+  z-index: 2;
+}
+
+.addBtn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  width: 284px;
+  height: 58px;
+  border-radius: 6px;
+  background-color: #0d50ff;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease;
+  z-index: 3;
+}
+
+.card:hover .addBtn {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.card:hover .addBtn:not(.added):hover {
+  background-color: #282828;
+}
+
+.added {
+  background-color: #fff;
+  color: #282828;
+  border: 2px solid #282828;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.info {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #333;
+  line-height: 130%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 16px;
+}
+
+.priceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cardPrice {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 20px;
+  color: #8b8b8b;
+  text-decoration: line-through;
+}

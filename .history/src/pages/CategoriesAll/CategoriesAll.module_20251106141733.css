@@ -1,0 +1,81 @@
+.tabs {
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 500;
+  color: #8b8b8b;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #dddddd;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover:not(.active) {
+  background-color: #0d50ff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.active {
+  color: #000;
+  cursor: default;
+  pointer-events: none;
+  border-color: #dddddd;
+  background-color: #fff;
+}
+
+.connector {
+  width: 32px;
+  height: 1px;
+  background-color: #dddddd;
+  margin: 0 8px;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 20px 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.card {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #dddddd;
+  height: 392px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  padding: 16px;
+}
+
+.breadcrumb {
+  gap: 16px;
+  margin-bottom: 32px;
+}

@@ -1,0 +1,53 @@
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+
+  align-items: stretch;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #8b8b8b;
+  padding: 8px 16px;
+  border: 1px solid #dddddd;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #2d63ecec;
+  color: black;
+}
+
+.tab:active {
+  background-color: #0d50ff;
+  color: white;
+}
+
+.active {
+  font-weight: 500;
+  color: #000;
+  cursor: default;
+}
+
+.connector {
+  width: 32px;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 20px 0 40px;
+}

@@ -1,0 +1,113 @@
+.section {
+  height: auto;
+  min-height: 560px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 106px auto 0;
+  padding-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.line {
+  width: 1100px;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+.sectionTitle {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 64px;
+  margin-right: 32px;
+}
+
+.showAllButton {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: white;
+  padding: 8px 16px;
+  color: #8b8b8b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.showAllButton:hover {
+  background-color: #7e7b7b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.showAllButton:active {
+  background-color: #0d50ff;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  justify-items: center;
+  align-items: start; /* чтобы карточки не растягивались */
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* добавлено — все карточки выравниваются */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cardImage {
+  object-fit: contain;
+  width: 100%;
+  max-width: 316px;
+  height: 316px;
+  display: block;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #0d50ff;
+  color: #fff;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: 68px;
+  height: 34px;
+  pointer-events: none; /* чтобы не мешал клику */
+}
+
+/* === адаптив === */
+@media (max-width: 900px) {
+  .cardImage {
+    max-width: 280px;
+    height: 280px;
+  }
+}

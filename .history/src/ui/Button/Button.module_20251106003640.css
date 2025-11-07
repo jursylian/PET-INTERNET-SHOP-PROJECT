@@ -1,0 +1,35 @@
+.button {
+  padding: 16px 32px;
+  width: 100%;
+  height: 58px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #282828;
+  transition: all 0.3s ease;
+}
+
+/* при наведении */
+.button:hover {
+  background-color: #282828;
+  color: #fff;
+}
+
+/* активное состояние (после отправки) */
+.button.submitted {
+  background-color: #fff;
+  color: #0d50ff;
+  border: 2px solid #0d50ff;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+/* убираем hover для состояния submitted */
+.button.submitted:hover {
+  background-color: #fff;
+  color: #0d50ff;
+}

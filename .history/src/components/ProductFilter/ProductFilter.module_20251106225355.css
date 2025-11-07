@@ -1,0 +1,72 @@
+.filters {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.filters input,
+.filters select {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.priceGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priceInput {
+  width: 100px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.title {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  margin-bottom: 40px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 6px;
+  height: 12px;
+  border: solid rgb(40, 87, 215);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.labelName {
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  margin-right: 16px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}

@@ -1,0 +1,152 @@
+.footer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 106px auto 0; /* добавлен отступ сверху от карточек */
+  padding-bottom: 60px;
+}
+
+.contact {
+  font-size: 64px;
+  margin-bottom: 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.card,
+.icons {
+  background-color: #f1f3f4;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.icons:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.text {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 20px;
+  color: #8b8b8b;
+}
+
+.textInfo {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 36px;
+  color: #000;
+  word-break: break-word;
+}
+
+.socialsMedien {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.socialLink img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socialLink:hover img {
+  transform: scale(1.15);
+  filter: brightness(0) saturate(100%) invert(33%) sepia(97%) saturate(7492%)
+    hue-rotate(218deg) brightness(101%) contrast(103%);
+  /* эффект — мягкий синий при ховере */
+}
+
+.map {
+  margin-top: 48px;
+}
+
+.iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  display: block;
+  border: none;
+}
+
+/* --- адаптив --- */
+@media (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .textInfo {
+    font-size: 28px;
+  }
+
+  .footer {
+    margin: 80px 1rem 0;
+  }
+
+  .iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .textInfo {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .socialsMedien {
+    justify-content: center;
+  }
+
+  .socialLink img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .iframe {
+    height: 250px;
+  }
+
+  .map {
+    margin-top: 32px;
+  }
+}

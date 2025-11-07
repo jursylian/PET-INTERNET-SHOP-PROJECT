@@ -1,0 +1,211 @@
+.section {
+  width: 100%;
+  max-width: 1360px;
+  margin: 100px auto 0;
+  padding-bottom: 20px;
+}
+
+/* Заголовок + кнопка */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #282828;
+  white-space: nowrap;
+}
+
+/* Линия, "врезающаяся" в кнопку */
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #dddddd;
+  margin-right: -1px; /* убираем зазор */
+}
+
+/* Кнопка "All sales" */
+.showAllButton {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  color: #8b8b8b;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.showAllButton:hover {
+  background-color: #0d50ff;
+  color: #ffffff;
+  border-color: #0d50ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.showAllButton:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+/* Сетка карточек */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* Карточка */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Изображение */
+.cardImage {
+  width: 100%;
+  max-width: 316px;
+  height: 316px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+/* Контент карточки */
+.cardInfo {
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  padding: 16px 12px;
+}
+
+.cardTitle {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #282828;
+  margin: 10px 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.newPrice {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0d50ff;
+}
+
+.oldPrice {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* Значок скидки */
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #0d50ff;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+/* Пустое состояние */
+.empty {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ======= Адаптив ======= */
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sectionTitle {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .showAllButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .line {
+    width: 100%;
+    margin: 0;
+  }
+
+  .showAllButton {
+    width: fit-content;
+  }
+}

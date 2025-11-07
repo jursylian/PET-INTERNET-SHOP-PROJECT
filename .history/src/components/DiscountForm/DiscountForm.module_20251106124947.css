@@ -1,0 +1,95 @@
+.wrapper {
+  min-width: 1395px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.discountSection {
+  position: relative;
+  background: linear-gradient(261.47deg, #2451c6 32.63%, #0d50ff 98.96%);
+  border-radius: 10px;
+  padding: 60px 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* Заголовок */
+.title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Контент */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* Левая часть — картинка */
+.imageWrap {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.animals {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0; /* прижимает животных к низу */
+}
+
+/* Правая часть — форма */
+.form {
+  flex: 0 0 45%; /* форма шире */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: 60px;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .discountSection {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 360px;
+    padding-bottom: 20px;
+  }
+
+  .imageWrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+}

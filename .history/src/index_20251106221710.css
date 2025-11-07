@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* 🔥 запрещаем горизонтальный скролл */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+img {
+  max-width: 100%; /* 🔥 защита от "выпирающих" картинок */
+  height: auto;
+  display: block;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}

@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px; /* вместо 25px */
+  height: 128px; /* фиксируем высоту */
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.withDivider {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.left,
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.logo img {
+  height: 70px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+.nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #282828;
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.inactive {
+  color: #8b8b8b;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: default;
+  text-decoration: none;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart img {
+  height: 44px;
+}
+
+.count {
+  position: absolute;
+  top: 0;
+  left: -6px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

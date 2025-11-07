@@ -1,0 +1,46 @@
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Основной инпут */
+.input {
+  padding: 16px 32px;
+  width: 100%;
+  height: 58px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  background-color: #2451c6;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: Montserrat, sans-serif;
+  transition: all 0.2s ease; /* плавные анимации */
+}
+
+/* Placeholder */
+.input::placeholder {
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+/* Фокусное состояние */
+.input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  outline: none;
+  background-color: #2b5be0; /* немного ярче при фокусе */
+}
+
+/* Ошибка */
+.errorBorder {
+  border-color: #ff5555 !important;
+  background-color: #2b3b91;
+}
+
+.error {
+  font-size: 14px;
+  color: #ffcccc;
+  margin-top: 4px;
+}

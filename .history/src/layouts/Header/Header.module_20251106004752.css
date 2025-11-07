@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 80px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 70px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.07);
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #282828;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #0d50ff;
+}
+
+/* Активная ссылка */
+.active {
+  color: #0d50ff;
+  font-weight: 600;
+}
+
+/* Корзина */
+.cart {
+  position: relative;
+  display: inline-block;
+}
+
+.cart img {
+  width: 32px;
+  height: 32px;
+}
+
+.count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #0d50ff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+}

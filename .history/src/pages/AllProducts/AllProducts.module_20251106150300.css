@@ -1,0 +1,52 @@
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0; /* убираем зазор, чтобы коннектор "соединял" табы */
+  margin-bottom: 32px;
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 500;
+  color: #8b8b8b;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #dddddd;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover:not(.active) {
+  background-color: #0d50ff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.active {
+  color: #000;
+  background-color: #fff;
+  cursor: default;
+}
+
+.connector {
+  width: 16px;
+  height: 1px;
+  background-color: #dddddd;
+  flex-shrink: 0;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 20px 0 40px;
+}
