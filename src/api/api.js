@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: "http://petshop-backend.onrender.com",
 });
 
 export const getCategories = () => api.get("/categories/all");
