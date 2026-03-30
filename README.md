@@ -5,7 +5,7 @@ A fullstack pet shop application with product catalog, categories, and discount 
 ## 🚀 Live Demo
 
 Frontend: https://pet-internet-shop-project.vercel.app  
-Backend: http://petshop-backend.onrender.com  
+Backend: https://pet-shop-backend-ljeu.onrender.com  
 
 ## 🛠 Tech Stack
 
