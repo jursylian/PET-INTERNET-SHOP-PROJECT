@@ -1,16 +1,49 @@
-# React + Vite
+# 🐾 Pet Shop (Frontend + Backend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fullstack pet shop application with product catalog, categories, and discount offers.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: https://pet-internet-shop-project.vercel.app  
+Backend: http://petshop-backend.onrender.com  
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Redux
+- Axios
+- Vite
+- Node.js
+- Express
+- SQLite
+- Render (backend hosting)
+- Vercel (frontend hosting)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Product catalog
+- Sale products section
+- Categories
+- API integration with backend
+- Responsive layout
+
+## 📦 Project Structure
+
+- Frontend: React + Redux
+- Backend: Express API (separate service)
+
+## ⚠️ Notes
+
+- Backend is hosted on Render free tier, so the first request may be slow.
+- Data is fetched from a deployed API.
+
+## 📚 What I learned
+
+- Connecting frontend to backend API
+- Working with Redux state management
+- Deploying fullstack apps (Vercel + Render)
+- Handling async requests with Axios
+
+## 👩‍💻 Author
+
+Julia
