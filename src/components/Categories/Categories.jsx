@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api, { BASE_URL } from "../../api/api";
 import styles from "./Categories.module.css";
 
 const Categories = () => {
@@ -10,7 +10,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:3333/categories/all");
+        const res = await api.get("/categories/all");
         setCategories(res.data.slice(0, 4));
       } catch (err) {
         console.error("Ошибка загрузки категорий:", err);
@@ -41,7 +41,7 @@ const Categories = () => {
             onClick={() => navigate(`/categories/${id}`)}
           >
             <img
-              src={`http://localhost:3333${image}`}
+              src={`${BASE_URL}${image}`}
               alt={title}
               className={styles.image}
             />

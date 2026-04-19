@@ -7,7 +7,7 @@ import PageSection from "../../ui/PageSection/PageSection";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategoryItems } from "../../redux/productSlice";
 import { productsSelectors } from "../../redux/productsSelectors";
-import axios from "axios";
+import api from "../../api/api";
 
 const CategoryPage = () => {
   const { categoryId } = useParams();
@@ -21,8 +21,8 @@ const CategoryPage = () => {
   const products = useSelector(selectFilteredCategory);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3333/categories/${categoryId}`)
+    api
+      .get(`/categories/${categoryId}`)
       .then((res) => {
         setCategoryTitle(res.data.category?.title || "Category");
         dispatch(setCategoryItems(res.data.data || []));

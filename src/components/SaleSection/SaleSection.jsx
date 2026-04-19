@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api, { BASE_URL } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SaleSection.module.css";
 
@@ -8,8 +8,8 @@ const SaleSection = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3333/products/all")
+    api
+      .get("/products/all")
       .then((res) => {
         const discounted = res.data.filter(
           (p) => p.price && p.discont_price && p.discont_price < p.price
@@ -51,14 +51,14 @@ const SaleSection = () => {
               className={styles.card}
               role="button"
               tabIndex={0}
-              onClick={() => navigate(`/products/${id}`)}
+              onClick={() => navigate(`/product/${id}`)}
             >
               <div className={styles.discountBadge}>-{discountPercent}%</div>
 
-              <Link to={`/products/${id}`} className={styles.imageLink}>
+              <Link to={`/product/${id}`} className={styles.imageLink}>
                 <img
                   src={
-                    image ? `http://localhost:3333${image}` : "/fallback.jpg"
+                    image ? `${BASE_URL}${image}` : "/fallback.jpg"
                   }
                   alt={title}
                   className={styles.cardImage}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { BASE_URL } from "../../api/api";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
@@ -29,7 +30,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${id}`} className={styles.link}>
         <div className={styles.imageWrapper}>
           <img
-            src={`http://localhost:3333${image}`}
+            src={`${BASE_URL}${image}`}
             alt={title}
             className={styles.image}
           />

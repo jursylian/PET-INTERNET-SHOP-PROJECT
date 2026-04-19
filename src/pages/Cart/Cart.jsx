@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api, { BASE_URL } from "../../api/api";
 import {
   removeFromCart,
   updateQuantity,
@@ -32,7 +32,7 @@ const Cart = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:3333/order/send", {
+      await api.post("/order/send", {
         customer: data,
         items,
         total: totalPrice,
@@ -66,7 +66,7 @@ const Cart = () => {
           {items.map((item) => (
             <div key={item.id} className={styles.cartItem}>
               <img
-                src={`http://localhost:3333${item.image}`}
+                src={`${BASE_URL}${item.image}`}
                 alt={item.title}
                 className={styles.image}
               />

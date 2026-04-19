@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../../api/api";
 import Input from "../../ui/Input/Input";
 import Button from "../../ui/Button/Button";
 import styles from "./DiscountForm.module.css";
@@ -34,7 +34,7 @@ const DiscountForm = () => {
     if (!validate()) return false;
 
     try {
-      await axios.post("http://localhost:3333/sale/send", formData);
+      await api.post("/sale/send", formData);
       setFormData({ name: "", phone: "", email: "" });
       return true;
     } catch (err) {

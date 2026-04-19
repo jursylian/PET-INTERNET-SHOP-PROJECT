@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://pet-shop-backend-ljeu.onrender.com",
-});
+export const BASE_URL =
+  import.meta.env.VITE_API_URL || "https://pet-shop-backend-ljeu.onrender.com";
 
-export const getCategories = () => api.get("/categories/all");
-export const getSaleProducts = () => api.get("/products/all");
-export const sendSaleForm = (data) => api.post("/sale/send", data);
+const api = axios.create({
+  baseURL: BASE_URL,
+});
 
 export default api;

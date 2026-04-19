@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import api from "../api/api";
 
 export const fetchAllProducts = createAsyncThunk(
   "products/fetchAll",
   async () => {
-    const res = await axios.get("http://localhost:3333/products/all");
+    const res = await api.get("/products/all");
     return res.data;
   }
 );
@@ -18,7 +18,7 @@ const productsSlice = createSlice({
     error: null,
     filters: {
       discountOnly: false,
-      priceForm: "",
+      priceFrom: "",
       priceTo: "",
       sort: "default",
     },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
-import axios from "axios";
+import api, { BASE_URL } from "../../api/api";
 import { useDispatch } from "react-redux";
 
 import styles from "./ProductDescription.module.css";
@@ -44,7 +44,7 @@ const ImageGallery = ({ images, mainImage, setMainImage, title }) => {
         {images.map((img, index) => (
           <img
             key={index}
-            src={`http://localhost:3333${img}`}
+            src={`${BASE_URL}${img}`}
             alt={`Thumbnail ${index + 1}`}
             className={`${styles.thumbnail} ${
               mainImage === img ? styles.activeThumbnail : ""
@@ -55,7 +55,7 @@ const ImageGallery = ({ images, mainImage, setMainImage, title }) => {
       </div>
       <div className={`${styles.imageWrapper} ${fade ? styles.fade : ""}`}>
         <img
-          src={`http://localhost:3333${mainImage}`}
+          src={`${BASE_URL}${mainImage}`}
           alt={title}
           className={styles.productImage}
           onError={(e) => {
@@ -122,8 +122,8 @@ const ProductDescription = () => {
 
   // Fetch product
   useEffect(() => {
-    axios
-      .get(`http://localhost:3333/products/${productId}`)
+    api
+      .get(`/products/${productId}`)
       .then((res) => {
         const data = Array.isArray(res.data) ? res.data[0] : res.data;
         setProduct(data);

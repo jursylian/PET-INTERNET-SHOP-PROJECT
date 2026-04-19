@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api, { BASE_URL } from "../../api/api";
 import { Link } from "react-router-dom";
 import styles from "./CategoriesAll.module.css";
 import PageSection from "../../ui/PageSection/PageSection";
@@ -8,8 +8,8 @@ const CategoriesAll = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3333/categories/all")
+    api
+      .get("/categories/all")
       .then((res) => setCategories(res.data))
       .catch((err) => console.error("Error loading categories", err));
   }, []);
@@ -32,7 +32,7 @@ const CategoriesAll = () => {
         {categories.map(({ id, title, image }) => (
           <Link to={`/categories/${id}`} key={id} className={styles.card}>
             <img
-              src={`http://localhost:3333${image}`}
+              src={`${BASE_URL}${image}`}
               alt={title}
               className={styles.cardImage}
             />
